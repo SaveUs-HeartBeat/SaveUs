@@ -16,6 +16,14 @@
 		7025764F29D277B300445354 /* SaveUsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7025764E29D277B300445354 /* SaveUsTests.swift */; };
 		7025765929D277B300445354 /* SaveUsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7025765829D277B300445354 /* SaveUsUITests.swift */; };
 		7025765B29D277B300445354 /* SaveUsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7025765A29D277B300445354 /* SaveUsUITestsLaunchTests.swift */; };
+		7025766B29D27A8400445354 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7025766A29D27A8400445354 /* RxCocoa */; };
+		7025766D29D27A8400445354 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 7025766C29D27A8400445354 /* RxRelay */; };
+		7025766F29D27A8400445354 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7025766E29D27A8400445354 /* RxSwift */; };
+		7025767229D27A9300445354 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7025767129D27A9300445354 /* SnapKit */; };
+		7025767429D27AFD00445354 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7025767329D27AFD00445354 /* SettingViewController.swift */; };
+		7025767629D27B7E00445354 /* ExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7025767529D27B7E00445354 /* ExplanationViewController.swift */; };
+		7025767B29D27BF300445354 /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7025767A29D27BF300445354 /* PracticeViewController.swift */; };
+		7025767E29D27C4600445354 /* EmergencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7025767D29D27C4600445354 /* EmergencyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,10 @@
 		7025765429D277B300445354 /* SaveUsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveUsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7025765829D277B300445354 /* SaveUsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUsUITests.swift; sourceTree = "<group>"; };
 		7025765A29D277B300445354 /* SaveUsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7025767329D27AFD00445354 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		7025767529D27B7E00445354 /* ExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationViewController.swift; sourceTree = "<group>"; };
+		7025767A29D27BF300445354 /* PracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
+		7025767D29D27C4600445354 /* EmergencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7025766F29D27A8400445354 /* RxSwift in Frameworks */,
+				7025767229D27A9300445354 /* SnapKit in Frameworks */,
+				7025766D29D27A8400445354 /* RxRelay in Frameworks */,
+				7025766B29D27A8400445354 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +115,10 @@
 		7025763329D277B200445354 /* SaveUs */ = {
 			isa = PBXGroup;
 			children = (
+				7025766729D279A600445354 /* Model */,
+				7025766829D279AF00445354 /* ViewController */,
 				7025763429D277B200445354 /* AppDelegate.swift */,
 				7025763629D277B200445354 /* SceneDelegate.swift */,
-				7025763829D277B200445354 /* MainViewController.swift */,
 				7025764229D277B200445354 /* LaunchScreen.storyboard */,
 				7025764529D277B200445354 /* Info.plist */,
 				7025763D29D277B200445354 /* SaveUs.xcdatamodeld */,
@@ -127,6 +144,57 @@
 			path = SaveUsUITests;
 			sourceTree = "<group>";
 		};
+		7025766729D279A600445354 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7025766829D279AF00445354 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7025763829D277B200445354 /* MainViewController.swift */,
+				7025767C29D27C3500445354 /* Emergency */,
+				7025767929D27BCA00445354 /* Practice */,
+				7025767829D27BA600445354 /* Explanation */,
+				7025767729D27B9900445354 /* Setting */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7025767729D27B9900445354 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				7025767329D27AFD00445354 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		7025767829D27BA600445354 /* Explanation */ = {
+			isa = PBXGroup;
+			children = (
+				7025767529D27B7E00445354 /* ExplanationViewController.swift */,
+			);
+			path = Explanation;
+			sourceTree = "<group>";
+		};
+		7025767929D27BCA00445354 /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				7025767A29D27BF300445354 /* PracticeViewController.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		7025767C29D27C3500445354 /* Emergency */ = {
+			isa = PBXGroup;
+			children = (
+				7025767D29D27C4600445354 /* EmergencyViewController.swift */,
+			);
+			path = Emergency;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +211,12 @@
 			dependencies = (
 			);
 			name = SaveUs;
+			packageProductDependencies = (
+				7025766A29D27A8400445354 /* RxCocoa */,
+				7025766C29D27A8400445354 /* RxRelay */,
+				7025766E29D27A8400445354 /* RxSwift */,
+				7025767129D27A9300445354 /* SnapKit */,
+			);
 			productName = SaveUs;
 			productReference = 7025763129D277B200445354 /* SaveUs.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +289,10 @@
 				Base,
 			);
 			mainGroup = 7025762829D277B200445354;
+			packageReferences = (
+				7025766929D27A8400445354 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				7025767029D27A9300445354 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 7025763229D277B200445354 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,9 +335,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7025767429D27AFD00445354 /* SettingViewController.swift in Sources */,
 				7025763929D277B200445354 /* MainViewController.swift in Sources */,
+				7025767629D27B7E00445354 /* ExplanationViewController.swift in Sources */,
+				7025767B29D27BF300445354 /* PracticeViewController.swift in Sources */,
 				7025763529D277B200445354 /* AppDelegate.swift in Sources */,
 				7025763F29D277B200445354 /* SaveUs.xcdatamodeld in Sources */,
+				7025767E29D27C4600445354 /* EmergencyViewController.swift in Sources */,
 				7025763729D277B200445354 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,6 +674,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7025766929D27A8400445354 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		7025767029D27A9300445354 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7025766A29D27A8400445354 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7025766929D27A8400445354 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		7025766C29D27A8400445354 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7025766929D27A8400445354 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		7025766E29D27A8400445354 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7025766929D27A8400445354 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		7025767129D27A9300445354 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7025767029D27A9300445354 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7025763D29D277B200445354 /* SaveUs.xcdatamodeld */ = {
