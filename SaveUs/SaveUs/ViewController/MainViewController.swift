@@ -104,7 +104,7 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController : CLLocationManagerDelegate {
-
+    
     func setMap(){
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -116,8 +116,10 @@ extension MainViewController : CLLocationManagerDelegate {
                     longtudeValue: CLLocationDegrees,
                     delta span: Double) -> CLLocationCoordinate2D {
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longtudeValue)
-        let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
-        let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
+        let spanValue = MKCoordinateSpan(latitudeDelta: span,
+                                         longitudeDelta: span)
+        let pRegion = MKCoordinateRegion(center: pLocation,
+                                         span: spanValue)
         mapVeiw.setRegion(pRegion, animated: true)
         return pLocation
     }
@@ -128,12 +130,15 @@ extension MainViewController : CLLocationManagerDelegate {
                        title strTitle: String,
                        subtitle strSubTitle:String){
         let annotation = MKPointAnnotation()
-        annotation.coordinate = goLocation(latitudeValue: latitudeValue, longtudeValue: longitudeValue, delta: span)
+        annotation.coordinate = goLocation(latitudeValue: latitudeValue,
+                                           longtudeValue: longitudeValue,
+                                           delta: span)
         annotation.title = strTitle
         annotation.subtitle = strSubTitle
         mapVeiw.addAnnotation(annotation)
     }
     
+    //실시간 위치 확인
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let pLocation = locations.last
         _ = goLocation(latitudeValue: (pLocation?.coordinate.latitude)!,
@@ -149,20 +154,7 @@ extension MainViewController : CLLocationManagerDelegate {
             guard let placemark = placemarks?.first else { return }
             self.mapLabel.text = "\(placemark.locality ?? "") \(placemark.name ?? "")"
         }
-        locationManager.stopUpdatingLocation()
-    }
-    
-    func convertCLLocationToAddress(location: CLLocation) {
-            let geocoder = CLGeocoder()
-            geocoder.reverseGeocodeLocation(location) { placemarks, error in
-                if error != nil {
-                    return
-                }
-                guard let placemark = placemarks?.first else { return }
-                self.mapLabel.text = "\(placemark.locality ?? "") \(placemark.name ?? "")"
-            }
-        }
-    
+    }    
 }
 
 //MARK: objc func
@@ -215,7 +207,7 @@ extension MainViewController{
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.top.equalTo(exLabel.snp.bottom).offset(8)
         }
-
+        
         view.addSubview(testStackVeiw)
         testStackVeiw.snp.makeConstraints{
             $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
@@ -224,3 +216,5 @@ extension MainViewController{
     }
     
 }
+
+//        locationManager.stopUpdatingLocation()
