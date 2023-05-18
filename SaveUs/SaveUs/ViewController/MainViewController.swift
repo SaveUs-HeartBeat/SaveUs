@@ -6,29 +6,25 @@
 //
 
 import UIKit
-import MapKit
-
 import SnapKit
 
 class MainViewController: UIViewController {
     
-    
-    private lazy var titleLabel: UILabel = {
+    private var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "SaveUs"
         label.font = UIFont.systemFont(ofSize: 48)
         label.textAlignment = .center
         return label
     }()
-    
+
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [emergencyButton,mainStackView])
         stackView.axis = .vertical // 가로로 배치
         stackView.distribution = .fillEqually // 뷰들을 동일한 크기로 조정
-        stackView.spacing = 16 // 뷰 사이의 간격을 16으로 설정
+        stackView.spacing = 32 // 뷰 사이의 간격을 16으로 설정
         return stackView
     }()
-    
     
     /// 실제상황
     private lazy var emergencyButton: UIButton = {
@@ -136,12 +132,12 @@ extension MainViewController{
         titleLabel.snp.makeConstraints{
             $0.centerX.equalToSuperview()
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            
+            $0.height.equalTo(50)
         }
         
         view.addSubview(stackView)
         stackView.snp.makeConstraints{
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(60)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(24)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().offset(-16)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-48)
