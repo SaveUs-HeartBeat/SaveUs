@@ -19,25 +19,35 @@ class MainViewController: UIViewController {
     }()
 
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [emergencyButton,mainStackView])
+        let stackView = UIStackView(arrangedSubviews: [emergencyView,mainStackView])
         stackView.axis = .vertical // 가로로 배치
         stackView.distribution = .fillEqually // 뷰들을 동일한 크기로 조정
         stackView.spacing = 32 // 뷰 사이의 간격을 16으로 설정
         return stackView
     }()
     
-    /// 실제상황
+    
+    private let emergencyView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    /// 실제상황 //mainButtonimage
     private lazy var emergencyButton: UIButton = {
         let button = UIButton()
-        button.setTitle("emergencyButton",for:.normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .red
-        button.layer.cornerRadius = 15
         button.addTarget(self, action: #selector(didTapEmergencyButton), for: .touchUpInside)
         return button
     }()
     
-    private lazy var mainStackView: UIStackView = {
+    private lazy var emergencyImageVeiw : UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "mainButtonimage")
+        view.contentMode = .scaleAspectFit
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    private lazy var  mainStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [practiceButton,subStackeiw])
         stackView.axis = .horizontal // 가로로 배치
         stackView.alignment = .fill // 뷰의 크기를 동일하게 유지
@@ -52,6 +62,7 @@ class MainViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .orange
         button.layer.cornerRadius = 15
+        button.layer.borderWidth = 2
         button.addTarget(self, action: #selector(didTapPracticeButton), for: .touchUpInside)
         return button
     }()
@@ -72,6 +83,7 @@ class MainViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .yellow
         button.layer.cornerRadius = 15
+        button.layer.borderWidth = 2
         button.addTarget(self, action: #selector(didTapExplanationButton), for: .touchUpInside)
         return button
     }()
@@ -83,6 +95,7 @@ class MainViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .green
         button.layer.cornerRadius = 15
+        button.layer.borderWidth = 2
         button.addTarget(self, action: #selector(didTapSettingButton), for: .touchUpInside)
         return button
     }()
@@ -90,7 +103,7 @@ class MainViewController: UIViewController {
     //MARK: 생명주기 함수
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+        view.backgroundColor = .white
         navigationController?.isNavigationBarHidden = true
         setLayout()
     }
@@ -128,6 +141,9 @@ extension MainViewController{
     
     func setLayout(){
         
+        emergencyView.addSubview(emergencyImageVeiw)
+        emergencyView.addSubview(emergencyButton)
+        
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints{
             $0.centerX.equalToSuperview()
@@ -142,6 +158,16 @@ extension MainViewController{
             $0.trailing.equalToSuperview().offset(-16)
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-48)
         }
+        
+        
+        emergencyButton.snp.makeConstraints{
+            $0.leading.trailing.top.bottom.equalToSuperview()
+        }
+        
+        emergencyImageVeiw.snp.makeConstraints{
+            $0.leading.trailing.top.bottom.equalToSuperview()
+        }
+        
     }
     
     
