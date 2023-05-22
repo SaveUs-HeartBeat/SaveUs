@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
         return button
     }()
     
-    private lazy var emergencyImageVeiw : UIImageView = {
+    private lazy var emergencyImageView : UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "mainButtonimage")
         view.contentMode = .scaleAspectFit
@@ -99,13 +99,14 @@ class MainViewController: UIViewController {
         button.addTarget(self, action: #selector(didTapSettingButton), for: .touchUpInside)
         return button
     }()
-    
+
     //MARK: 생명주기 함수
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationController?.isNavigationBarHidden = true
+//        navigationController?.isNavigationBarHidden = true
         setLayout()
+        startAnimation()
     }
     
 }
@@ -134,6 +135,21 @@ extension MainViewController{
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
+    
+    func startAnimation() {
+        let animationDuration = 60.0 / 110.0 // 1분에 55번 동작하도록 설정
+         
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: [.autoreverse, .repeat], animations: {
+            self.emergencyImageView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }, completion: nil)
+        
+    }
+
+    // 애니메이션을 중지하는 함수
+    func stopAnimation() {
+        emergencyImageView.layer.removeAllAnimations()
+    }
+    
 }
 
 //MARK: 오토레이아웃 영역
@@ -141,7 +157,7 @@ extension MainViewController{
     
     func setLayout(){
         
-        emergencyView.addSubview(emergencyImageVeiw)
+        emergencyView.addSubview(emergencyImageView)
         emergencyView.addSubview(emergencyButton)
         
         view.addSubview(titleLabel)
@@ -164,7 +180,7 @@ extension MainViewController{
             $0.leading.trailing.top.bottom.equalToSuperview()
         }
         
-        emergencyImageVeiw.snp.makeConstraints{
+        emergencyImageView.snp.makeConstraints{
             $0.leading.trailing.top.bottom.equalToSuperview()
         }
         
