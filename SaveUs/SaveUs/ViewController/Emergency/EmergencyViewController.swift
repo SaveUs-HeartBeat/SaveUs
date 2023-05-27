@@ -13,6 +13,7 @@ import Then
 
 class EmergencyViewController: CustomViewController {
     
+    
     enum tableIndex: Int, CaseIterable {
         case topPaddingCell
         case expCell
@@ -49,10 +50,9 @@ class EmergencyViewController: CustomViewController {
         $0.setTitle("다음", for: .normal)
         $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
-//        $0.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
     }
-    
-    
+    private let viewModel = EmergencyViewModel()
     
     
     override func viewDidLoad() {
@@ -60,12 +60,22 @@ class EmergencyViewController: CustomViewController {
         tableView.dataSource = self
         ///nav설정하는거
         self.setNavbar(title: "실제 상황", titleColor: .red)
+        self.viewModel.setCellData()
         setView()
     }
     
     @objc
     private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc
+    private func nextButtonTapped() {
+        if self.viewModel.setCellData() {
+            nextButton.backgroundColor = UIColor(hex: "#B7B7B7")
+            nextButton.isEnabled = false
+        }
+        tableView.reloadData()
     }
     
 }
@@ -89,7 +99,7 @@ extension EmergencyViewController: UITableViewDataSource {
             return cell
         case .expCell:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EmergencyViewTVExpCell.self)
-            cell.setData(data: EmergencyViewTVCModel(title: "테스트", des1: "", des2: ""))
+            cell.setData(data: self.viewModel.cellCurrentData)
             return cell
             
         case .mapCell :
@@ -144,7 +154,6 @@ extension EmergencyViewController {
             $0.leading.equalTo(bottomPaddingView.snp.trailing)
             $0.trailing.equalToSuperview().offset(-16)
         }
-        
         
     }
     

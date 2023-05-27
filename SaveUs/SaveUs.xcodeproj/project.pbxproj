@@ -34,6 +34,7 @@
 		703350402A2218CF00C30138 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033503F2A2218CF00C30138 /* Extension.swift */; };
 		703350422A22323900C30138 /* EmergencyViewTVPaddingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350412A22323900C30138 /* EmergencyViewTVPaddingCell.swift */; };
 		703350442A224AD900C30138 /* EmergencyViewTVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350432A224AD900C30138 /* EmergencyViewTVCModel.swift */; };
+		703350462A2279DC00C30138 /* EmergencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350452A2279DC00C30138 /* EmergencyViewModel.swift */; };
 		70DA65452A21A69400E9FBB4 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */; };
 		70DA65472A21DC2200E9FBB4 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		7033503F2A2218CF00C30138 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		703350412A22323900C30138 /* EmergencyViewTVPaddingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewTVPaddingCell.swift; sourceTree = "<group>"; };
 		703350432A224AD900C30138 /* EmergencyViewTVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewTVCModel.swift; sourceTree = "<group>"; };
+		703350452A2279DC00C30138 /* EmergencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewModel.swift; sourceTree = "<group>"; };
 		70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,7 +184,6 @@
 		7025766729D279A600445354 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				703350432A224AD900C30138 /* EmergencyViewTVCModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,7 +229,9 @@
 			isa = PBXGroup;
 			children = (
 				7025767D29D27C4600445354 /* EmergencyViewController.swift */,
+				703350452A2279DC00C30138 /* EmergencyViewModel.swift */,
 				7033503D2A220CF200C30138 /* EmergencyViewTVExpCell.swift */,
+				703350432A224AD900C30138 /* EmergencyViewTVCModel.swift */,
 				703350412A22323900C30138 /* EmergencyViewTVPaddingCell.swift */,
 			);
 			path = Emergency;
@@ -443,6 +446,7 @@
 				70DA65452A21A69400E9FBB4 /* CustomNavBar.swift in Sources */,
 				7025767B29D27BF300445354 /* PracticeViewController.swift in Sources */,
 				7025763529D277B200445354 /* AppDelegate.swift in Sources */,
+				703350462A2279DC00C30138 /* EmergencyViewModel.swift in Sources */,
 				7025763F29D277B200445354 /* SaveUs.xcdatamodeld in Sources */,
 				70DA65472A21DC2200E9FBB4 /* CustomViewController.swift in Sources */,
 				7025767E29D27C4600445354 /* EmergencyViewController.swift in Sources */,

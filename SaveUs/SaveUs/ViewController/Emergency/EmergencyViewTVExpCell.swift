@@ -28,16 +28,16 @@ class EmergencyViewTVExpCell: UITableViewCell, Reusable {
     }
     
     private lazy var titleLabel: UILabel = .init().then{
-        $0.font = UIFont.boldSystemFont(ofSize: 20)
+        $0.font = UIFont.boldSystemFont(ofSize: 25)
     }
     
     private lazy var titleTimerLabel: UILabel = .init().then{
         $0.backgroundColor = .white
-        $0.layer.cornerRadius = 15
+        $0.layer.cornerRadius = 20
         $0.layer.borderWidth = 2
         $0.layer.masksToBounds = true
         $0.text = "10"
-        $0.font = UIFont.boldSystemFont(ofSize: 13)
+        $0.font = UIFont.boldSystemFont(ofSize: 17)
         $0.textAlignment = .center
     }
     
@@ -54,7 +54,7 @@ class EmergencyViewTVExpCell: UITableViewCell, Reusable {
         $0.font = UIFont.boldSystemFont(ofSize: 18)
         $0.textAlignment = .left
         $0.numberOfLines = 0
-        $0.text = "1. 청춘의 트고, 그러므로 밥을 원대하고, 것이다. 설레는 크고 위하여 원대하고, 넣는 없으면, 위하여 동력은 그리하였는가? 눈에 꽃이 풍부하게 과실이 있으며, 곳이 만물은 원질이 봄바람이다. 남는 예가 이상의 가는 가치를 끓는 이상의 쓸쓸하랴? 동력은 찾아다녀도, 투명하되 청춘을 따뜻한 심장의 바이며, 운다. 있으며, 우리의 희망의 영원히 운다."
+        $0.text = "0"
         $0.setLineSpacing(spacing: 4)
     }
     
@@ -62,7 +62,7 @@ class EmergencyViewTVExpCell: UITableViewCell, Reusable {
         $0.font = UIFont.boldSystemFont(ofSize: 18)
         $0.textAlignment = .left
         $0.numberOfLines = 0
-        $0.text = "2. 가치를 안고, 물방아 때문이다. 인간은 보이는 같은 이는 아니한 이것이야말로 미인을 말이다. 남는 피가 구하지 갑 봄바람이다. 같이, 고행을 소금이라 힘있다. 힘차게 전인 지혜는 길지 인생에 끓는다."
+        $0.text = "0"
         $0.setLineSpacing(spacing: 4)
     }
     
@@ -79,6 +79,8 @@ class EmergencyViewTVExpCell: UITableViewCell, Reusable {
     //데이터셋팅
     func setData(data:EmergencyViewTVCModel){
         titleLabel.text = data.title
+        des1Label.text = data.des1
+        des2Label.text = data.des2
     }
     
 }
@@ -97,7 +99,7 @@ extension EmergencyViewTVExpCell {
         }
         
         titleView.snp.makeConstraints{
-            $0.height.equalTo(48)
+            $0.height.equalTo(64)
             $0.top.leading.trailing.equalToSuperview()
         }
         setTitleView()
@@ -120,7 +122,7 @@ extension EmergencyViewTVExpCell {
         }
         
         titleTimerLabel.snp.makeConstraints{
-            $0.height.width.equalTo(30)
+            $0.height.width.equalTo(40)
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().offset(-20)
         }
