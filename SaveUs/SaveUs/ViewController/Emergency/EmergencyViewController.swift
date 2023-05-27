@@ -67,6 +67,7 @@ class EmergencyViewController: CustomViewController {
     @objc
     private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
+        TTSManager.shared.stop()
     }
     
     @objc

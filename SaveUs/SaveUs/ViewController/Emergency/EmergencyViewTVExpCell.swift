@@ -78,9 +78,12 @@ class EmergencyViewTVExpCell: UITableViewCell, Reusable {
     
     //데이터셋팅
     func setData(data:EmergencyViewTVCModel){
+        TTSManager.shared.stop()
+        TTSManager.shared.play(data.voiceString)
         titleLabel.text = data.title
         des1Label.text = data.des1
         des2Label.text = data.des2
+        
     }
     
 }

@@ -11,4 +11,5 @@ struct EmergencyViewTVCModel {
     var title: String
     var des1: String
     var des2: String
+    var voiceString: String
 }

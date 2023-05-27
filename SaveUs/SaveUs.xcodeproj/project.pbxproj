@@ -35,6 +35,7 @@
 		703350422A22323900C30138 /* EmergencyViewTVPaddingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350412A22323900C30138 /* EmergencyViewTVPaddingCell.swift */; };
 		703350442A224AD900C30138 /* EmergencyViewTVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350432A224AD900C30138 /* EmergencyViewTVCModel.swift */; };
 		703350462A2279DC00C30138 /* EmergencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350452A2279DC00C30138 /* EmergencyViewModel.swift */; };
+		703350482A22865800C30138 /* TTSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350472A22865800C30138 /* TTSManager.swift */; };
 		70DA65452A21A69400E9FBB4 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */; };
 		70DA65472A21DC2200E9FBB4 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		703350412A22323900C30138 /* EmergencyViewTVPaddingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewTVPaddingCell.swift; sourceTree = "<group>"; };
 		703350432A224AD900C30138 /* EmergencyViewTVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewTVCModel.swift; sourceTree = "<group>"; };
 		703350452A2279DC00C30138 /* EmergencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewModel.swift; sourceTree = "<group>"; };
+		703350472A22865800C30138 /* TTSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSManager.swift; sourceTree = "<group>"; };
 		70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,6 +263,7 @@
 			children = (
 				70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */,
 				7033503F2A2218CF00C30138 /* Extension.swift */,
+				703350472A22865800C30138 /* TTSManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7025767429D27AFD00445354 /* SettingViewController.swift in Sources */,
+				703350482A22865800C30138 /* TTSManager.swift in Sources */,
 				7025763929D277B200445354 /* MainViewController.swift in Sources */,
 				7025767629D27B7E00445354 /* ExplanationViewController.swift in Sources */,
 				703350402A2218CF00C30138 /* Extension.swift in Sources */,
