@@ -27,6 +27,7 @@ final class CustomNavBar : UIView {
     
     private(set) lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 17)
         return label
     }()
     
