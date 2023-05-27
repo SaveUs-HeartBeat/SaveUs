@@ -104,9 +104,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-//        navigationController?.isNavigationBarHidden = true
+        navigationController?.isNavigationBarHidden = true
         setLayout()
         startAnimation()
+        navigationController?.navigationBar.backgroundColor = .red
+        
     }
     
 }

@@ -7,11 +7,12 @@
 
 import UIKit
 
-class PracticeViewController: UIViewController {
+class PracticeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .orange
+        self.setNavbar(title: "ddd", titleColor: .red)
         // Do any additional setup after loading the view.
     }
     

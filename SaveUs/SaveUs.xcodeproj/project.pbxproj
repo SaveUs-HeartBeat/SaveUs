@@ -28,6 +28,8 @@
 		702AA7D32A12582D00AF8355 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702AA7D22A12582D00AF8355 /* ContentView.swift */; };
 		702AA7D52A12582D00AF8355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 702AA7D42A12582D00AF8355 /* Assets.xcassets */; };
 		702AA7D82A12582D00AF8355 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 702AA7D72A12582D00AF8355 /* Preview Assets.xcassets */; };
+		70DA65452A21A69400E9FBB4 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */; };
+		70DA65472A21DC2200E9FBB4 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		702AA7D22A12582D00AF8355 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		702AA7D42A12582D00AF8355 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		702AA7D72A12582D00AF8355 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 		7025763329D277B200445354 /* SaveUs */ = {
 			isa = PBXGroup;
 			children = (
+				70DA65432A21A68000E9FBB4 /* Util */,
 				7025766729D279A600445354 /* Model */,
 				7025766829D279AF00445354 /* ViewController */,
 				7025763429D277B200445354 /* AppDelegate.swift */,
@@ -172,6 +177,7 @@
 		7025766829D279AF00445354 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */,
 				7025763829D277B200445354 /* MainViewController.swift */,
 				7025767C29D27C3500445354 /* Emergency */,
 				7025767929D27BCA00445354 /* Practice */,
@@ -230,6 +236,14 @@
 				702AA7D72A12582D00AF8355 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		70DA65432A21A68000E9FBB4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,9 +419,11 @@
 				7025767429D27AFD00445354 /* SettingViewController.swift in Sources */,
 				7025763929D277B200445354 /* MainViewController.swift in Sources */,
 				7025767629D27B7E00445354 /* ExplanationViewController.swift in Sources */,
+				70DA65452A21A69400E9FBB4 /* CustomNavBar.swift in Sources */,
 				7025767B29D27BF300445354 /* PracticeViewController.swift in Sources */,
 				7025763529D277B200445354 /* AppDelegate.swift in Sources */,
 				7025763F29D277B200445354 /* SaveUs.xcdatamodeld in Sources */,
+				70DA65472A21DC2200E9FBB4 /* CustomViewController.swift in Sources */,
 				7025767E29D27C4600445354 /* EmergencyViewController.swift in Sources */,
 				7025763729D277B200445354 /* SceneDelegate.swift in Sources */,
 			);

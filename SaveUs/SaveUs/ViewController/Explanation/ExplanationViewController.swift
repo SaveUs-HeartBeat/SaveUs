@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ExplanationViewController: UIViewController {
+class ExplanationViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
-
+        self.setNavbar(title: "ddd", titleColor: .red)
         // Do any additional setup after loading the view.
     }
     

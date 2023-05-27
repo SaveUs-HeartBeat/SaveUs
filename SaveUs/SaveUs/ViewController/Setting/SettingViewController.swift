@@ -7,11 +7,12 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
+        self.setNavbar(title: "ddd", titleColor: .red)
         // Do any additional setup after loading the view.
     }
     
