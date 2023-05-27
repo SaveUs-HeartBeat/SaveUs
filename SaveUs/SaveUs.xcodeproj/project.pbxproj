@@ -28,6 +28,8 @@
 		702AA7D32A12582D00AF8355 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702AA7D22A12582D00AF8355 /* ContentView.swift */; };
 		702AA7D52A12582D00AF8355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 702AA7D42A12582D00AF8355 /* Assets.xcassets */; };
 		702AA7D82A12582D00AF8355 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 702AA7D72A12582D00AF8355 /* Preview Assets.xcassets */; };
+		703350392A220A4600C30138 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = 703350382A220A4600C30138 /* Reusable */; };
+		7033503C2A220A8F00C30138 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 7033503B2A220A8F00C30138 /* Then */; };
 		70DA65452A21A69400E9FBB4 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */; };
 		70DA65472A21DC2200E9FBB4 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */; };
 /* End PBXBuildFile section */
@@ -82,9 +84,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7025766F29D27A8400445354 /* RxSwift in Frameworks */,
+				7033503C2A220A8F00C30138 /* Then in Frameworks */,
 				7025767229D27A9300445354 /* SnapKit in Frameworks */,
 				7025766D29D27A8400445354 /* RxRelay in Frameworks */,
 				7025766B29D27A8400445354 /* RxCocoa in Frameworks */,
+				703350392A220A4600C30138 /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +271,8 @@
 				7025766C29D27A8400445354 /* RxRelay */,
 				7025766E29D27A8400445354 /* RxSwift */,
 				7025767129D27A9300445354 /* SnapKit */,
+				703350382A220A4600C30138 /* Reusable */,
+				7033503B2A220A8F00C30138 /* Then */,
 			);
 			productName = SaveUs;
 			productReference = 7025763129D277B200445354 /* SaveUs.app */;
@@ -363,6 +369,8 @@
 			packageReferences = (
 				7025766929D27A8400445354 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				7025767029D27A9300445354 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				703350372A220A4600C30138 /* XCRemoteSwiftPackageReference "Reusable" */,
+				7033503A2A220A8F00C30138 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 7025763229D277B200445354 /* Products */;
 			projectDirPath = "";
@@ -851,6 +859,22 @@
 				kind = branch;
 			};
 		};
+		703350372A220A4600C30138 /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		7033503A2A220A8F00C30138 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -873,6 +897,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7025767029D27A9300445354 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		703350382A220A4600C30138 /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 703350372A220A4600C30138 /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
+		};
+		7033503B2A220A8F00C30138 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7033503A2A220A8F00C30138 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 

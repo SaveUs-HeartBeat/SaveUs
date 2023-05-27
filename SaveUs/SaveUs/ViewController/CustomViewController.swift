@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class BaseViewController: UIViewController {
+class CustomViewController: UIViewController {
 
     let navBar : CustomNavBar = {
        let view = CustomNavBar()
@@ -29,7 +29,7 @@ class BaseViewController: UIViewController {
     }
 }
 
-extension BaseViewController {
+extension CustomViewController {
     private func setView(){
         view.addSubview(navBar)
         navBar.snp.makeConstraints{

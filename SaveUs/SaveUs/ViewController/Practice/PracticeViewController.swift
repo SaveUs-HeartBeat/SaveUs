@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PracticeViewController: BaseViewController {
+class PracticeViewController: CustomViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

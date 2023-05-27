@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExplanationViewController: BaseViewController {
+class ExplanationViewController: CustomViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
