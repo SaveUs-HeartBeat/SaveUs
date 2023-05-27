@@ -89,10 +89,7 @@ extension EmergencyViewController: UITableViewDataSource {
             return cell
         case .expCell:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EmergencyViewTVExpCell.self)
-            //        let giftBoxList = self.viewModel.giftBoxList
-            //        cell.setData(giftBox: giftBoxList[indexPath.row])
-            //        cell.isCellFirstAndLast(arrayCount: giftBoxList.count, indexPath: indexPath.row)
-            //        cell.delegate = self
+            cell.setData(data: EmergencyViewTVCModel(title: "테스트", des1: "", des2: ""))
             return cell
             
         case .mapCell :
