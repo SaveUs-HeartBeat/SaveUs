@@ -84,7 +84,6 @@ class EmergencyViewTVExpCell: UITableViewCell, Reusable {
     //데이터셋팅
     func setData(data: EmergencyViewTVCModel) {
         stopTimerSetDataEnd()
-        TTSManager.shared.stop()
         TTSManager.shared.play(data.voiceString+data.voiceString)
         titleLabel.text = data.title
         des1Label.text = data.des1

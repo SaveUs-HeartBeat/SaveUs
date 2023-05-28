@@ -10,6 +10,7 @@ import Reusable
 import SnapKit
 import Then
 import AVFoundation
+import MediaPlayer
 
 
 class EmergencyViewController: CustomViewController {
@@ -67,6 +68,8 @@ class EmergencyViewController: CustomViewController {
     }
     private let viewModel = EmergencyViewModel()
     
+    let volumeView = MPVolumeView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -76,6 +79,7 @@ class EmergencyViewController: CustomViewController {
         setView()
         setCloser()
     }
+
     
     @objc
     private func backButtonTapped() {
@@ -113,31 +117,22 @@ class EmergencyViewController: CustomViewController {
     }
     
     private func setCloser() {
+
         self.navBar.didTpaBackButton = {
             self.navigationController?.popViewController(animated: true)
             TTSManager.shared.stop()
             self.stopSound()
             self.isBeepSoundPlay = false
         }
-        ///tts 재생끝 
-//        TTSManager.shared.completion = {
-//            print("ppap::ㅇ")
-//            if self.isBeepSoundPlay {
-//                self.playSound()
-//                return
-//            }
-////            self.setNext()
-//
-//        }
-        
-        
     }
+    
 }
 
 extension EmergencyViewController: UITableViewDataSource {
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        
         return tableIndex.allCases.count
     }
     
@@ -146,6 +141,7 @@ extension EmergencyViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        volumeView.setVolume(1)
         let currentIndex = tableIndex(rawValue: indexPath.section)
         switch currentIndex {
         case .topPaddingCell:

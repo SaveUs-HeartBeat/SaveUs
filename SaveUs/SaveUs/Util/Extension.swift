@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 
 extension UIColor {
@@ -52,5 +53,19 @@ extension UILabel {
                                      value: style,
                                      range: NSRange(location: 0, length: attributeString.length))
         attributedText = attributeString
+    }
+    
+    
+}
+extension MPVolumeView {
+     func setVolume(_ volume: Float) {
+        
+        let volumeView = MPVolumeView()
+        let volumeSlider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
+            volumeSlider?.value = volume
+        }
+        
     }
 }
