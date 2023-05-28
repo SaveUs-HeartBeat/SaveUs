@@ -12,7 +12,7 @@ class ExplanationViewController: CustomViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
-        self.setNavbar(title: "ddd", titleColor: .red)
+        self.setNavbar(title: "아직 준비되지 않았어요.", titleColor: .red)
         // Do any additional setup after loading the view.
     }
     

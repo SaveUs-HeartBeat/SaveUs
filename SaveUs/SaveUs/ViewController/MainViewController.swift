@@ -58,15 +58,15 @@ class MainViewController: UIViewController {
     ///연습모드
     private lazy var practiceButton: UIButton = {
         let button = UIButton()
-        button.setTitle("practiceButton",for:.normal)
+        button.setTitle("연습모드",for:.normal)
         button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .orange
+        button.backgroundColor = UIColor(hex: "#FFE600")
         button.layer.cornerRadius = 15
         button.layer.borderWidth = 2
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25) // 볼드 폰트로 설정
         button.addTarget(self, action: #selector(didTapPracticeButton), for: .touchUpInside)
         return button
     }()
-    
 
     private lazy var subStackeiw: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [explanationButton,settingButton])
@@ -81,7 +81,7 @@ class MainViewController: UIViewController {
         let button = UIButton()
         button.setTitle("explanationButton",for:.normal)
         button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .yellow
+        button.backgroundColor = .orange
         button.layer.cornerRadius = 15
         button.layer.borderWidth = 2
         button.addTarget(self, action: #selector(didTapExplanationButton), for: .touchUpInside)
