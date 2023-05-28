@@ -9,10 +9,16 @@ import UIKit
 import Reusable
 import SnapKit
 import Then
+import AVFoundation
 
 
 class EmergencyViewController: CustomViewController {
     
+    ///소리재생하는애
+    private var player: AVAudioPlayer?
+    
+    ///CPR소리재생가능 상태
+    private var isBeepSoundPlay = false
     
     enum tableIndex: Int, CaseIterable {
         case topPaddingCell
@@ -60,7 +66,6 @@ class EmergencyViewController: CustomViewController {
     }
     private let viewModel = EmergencyViewModel()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -68,12 +73,16 @@ class EmergencyViewController: CustomViewController {
         self.setNavbar(title: "실제 상황", titleColor: .red)
         self.viewModel.setCellData()
         setView()
+        setCloser()
     }
     
     @objc
     private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
         TTSManager.shared.stop()
+        stopSound()
+        isBeepSoundPlay = false
+        //이때는 재생 ㄴㄴ
     }
     
     @objc
@@ -84,7 +93,25 @@ class EmergencyViewController: CustomViewController {
         }
         tableView.reloadData()
     }
+
     
+    private func setCloser() {
+        self.navBar.didTpaBackButton = {
+            self.navigationController?.popViewController(animated: true)
+            TTSManager.shared.stop()
+            self.stopSound()
+            self.isBeepSoundPlay = false
+        }
+        ///tts 재생끝 
+        TTSManager.shared.completion = {
+            print("ppap::ㅇ")
+            if self.isBeepSoundPlay {
+                self.playSound()
+            }
+        }
+        
+        
+    }
 }
 
 extension EmergencyViewController: UITableViewDataSource {
@@ -107,6 +134,7 @@ extension EmergencyViewController: UITableViewDataSource {
         case .expCell:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EmergencyViewTVExpCell.self)
             cell.setData(data: self.viewModel.cellCurrentData)
+
             return cell
             
         case .callCell :
@@ -126,6 +154,30 @@ extension EmergencyViewController: UITableViewDataSource {
         }
         
     }
+}
+
+extension EmergencyViewController {
+    
+    func playSound() {
+        let soundName = "test"
+        // forResource: 파일 이름(확장자 제외) , withExtension: 확장자(mp3, wav 등) 입력
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
+            return
+        }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            player?.numberOfLoops = -1
+            player?.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func stopSound() {
+        player?.stop()
+    }
+    
 }
 
 extension EmergencyViewController {

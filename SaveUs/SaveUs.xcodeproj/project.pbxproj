@@ -38,6 +38,7 @@
 		703350482A22865800C30138 /* TTSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350472A22865800C30138 /* TTSManager.swift */; };
 		7033504A2A23792A00C30138 /* EmergencyViewTVCallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350492A23792A00C30138 /* EmergencyViewTVCallCell.swift */; };
 		7033504C2A2383CB00C30138 /* EmergencyViewTVMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033504B2A2383CB00C30138 /* EmergencyViewTVMapCell.swift */; };
+		7033504F2A23B5FC00C30138 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7033504E2A23B5FC00C30138 /* test.mp3 */; };
 		70DA65452A21A69400E9FBB4 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */; };
 		70DA65472A21DC2200E9FBB4 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		703350472A22865800C30138 /* TTSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSManager.swift; sourceTree = "<group>"; };
 		703350492A23792A00C30138 /* EmergencyViewTVCallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewTVCallCell.swift; sourceTree = "<group>"; };
 		7033504B2A2383CB00C30138 /* EmergencyViewTVMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewTVMapCell.swift; sourceTree = "<group>"; };
+		7033504E2A23B5FC00C30138 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 		70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 		7025762829D277B200445354 = {
 			isa = PBXGroup;
 			children = (
+				7033504D2A23B5EE00C30138 /* Sounds */,
 				7025763329D277B200445354 /* SaveUs */,
 				7025764D29D277B300445354 /* SaveUsTests */,
 				7025765729D277B300445354 /* SaveUsUITests */,
@@ -262,6 +265,14 @@
 				702AA7D72A12582D00AF8355 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7033504D2A23B5EE00C30138 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7033504E2A23B5FC00C30138 /* test.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		70DA65432A21A68000E9FBB4 /* Util */ = {
@@ -415,6 +426,7 @@
 			files = (
 				7025764429D277B200445354 /* LaunchScreen.storyboard in Resources */,
 				7025764129D277B200445354 /* Assets.xcassets in Resources */,
+				7033504F2A23B5FC00C30138 /* test.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

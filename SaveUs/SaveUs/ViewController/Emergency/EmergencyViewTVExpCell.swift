@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 class EmergencyViewTVExpCell: UITableViewCell, Reusable {
-    
+
     //중복되는거 떄문에 지정
     private let borderW: CGFloat = 3
     
@@ -79,11 +79,10 @@ class EmergencyViewTVExpCell: UITableViewCell, Reusable {
     //데이터셋팅
     func setData(data:EmergencyViewTVCModel){
         TTSManager.shared.stop()
-//        TTSManager.shared.play(data.voiceString) //시끄러워서 꺼둠
+        TTSManager.shared.play(data.voiceString) //시끄러워서 꺼둠
         titleLabel.text = data.title
         des1Label.text = data.des1
         des2Label.text = data.des2
-        
     }
     
 }

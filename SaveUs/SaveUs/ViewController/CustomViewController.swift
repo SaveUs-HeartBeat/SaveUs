@@ -20,7 +20,6 @@ class CustomViewController: UIViewController {
         view.backgroundColor = .white
         navBar.didTpaBackButton = {
             self.navigationController?.popViewController(animated: true)
-            TTSManager.shared.stop()
         }
         setView()
     }

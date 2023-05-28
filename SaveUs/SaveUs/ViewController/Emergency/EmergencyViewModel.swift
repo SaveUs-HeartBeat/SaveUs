@@ -45,7 +45,7 @@ class EmergencyViewModel {
         cellDateCount += 1
         
         if cellDateCount == EmergencyViewTVCModelArray.count {
-            cellDateCount = EmergencyViewTVCModelArray.count - 1
+//            cellDateCount = EmergencyViewTVCModelArray.count - 1
             return true
         }
         
