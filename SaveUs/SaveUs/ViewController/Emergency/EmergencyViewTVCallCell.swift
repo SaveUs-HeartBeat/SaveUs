@@ -40,8 +40,8 @@ class EmergencyViewTVCallCell: UITableViewCell, Reusable {
     
     @objc
     private func call119ButtonTapped() {
-        let number:Int = 01000000000
-        if let url = NSURL(string: "tel://0" + "\(number)"),
+        let number:Int = 119
+        if let url = NSURL(string: "tel://" + "\(number)"),
             UIApplication.shared.canOpenURL(url as URL) {
             UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
         }
