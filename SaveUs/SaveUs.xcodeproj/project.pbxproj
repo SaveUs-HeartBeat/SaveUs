@@ -36,7 +36,8 @@
 		703350442A224AD900C30138 /* EmergencyViewTVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350432A224AD900C30138 /* EmergencyViewTVCModel.swift */; };
 		703350462A2279DC00C30138 /* EmergencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350452A2279DC00C30138 /* EmergencyViewModel.swift */; };
 		703350482A22865800C30138 /* TTSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350472A22865800C30138 /* TTSManager.swift */; };
-		7033504A2A23792A00C30138 /* EmergencyViewTVMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350492A23792A00C30138 /* EmergencyViewTVMapCell.swift */; };
+		7033504A2A23792A00C30138 /* EmergencyViewTVCallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703350492A23792A00C30138 /* EmergencyViewTVCallCell.swift */; };
+		7033504C2A2383CB00C30138 /* EmergencyViewTVMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033504B2A2383CB00C30138 /* EmergencyViewTVMapCell.swift */; };
 		70DA65452A21A69400E9FBB4 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */; };
 		70DA65472A21DC2200E9FBB4 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */; };
 /* End PBXBuildFile section */
@@ -87,7 +88,8 @@
 		703350432A224AD900C30138 /* EmergencyViewTVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewTVCModel.swift; sourceTree = "<group>"; };
 		703350452A2279DC00C30138 /* EmergencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewModel.swift; sourceTree = "<group>"; };
 		703350472A22865800C30138 /* TTSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSManager.swift; sourceTree = "<group>"; };
-		703350492A23792A00C30138 /* EmergencyViewTVMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewTVMapCell.swift; sourceTree = "<group>"; };
+		703350492A23792A00C30138 /* EmergencyViewTVCallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewTVCallCell.swift; sourceTree = "<group>"; };
+		7033504B2A2383CB00C30138 /* EmergencyViewTVMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyViewTVMapCell.swift; sourceTree = "<group>"; };
 		70DA65442A21A69400E9FBB4 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		70DA65462A21DC2200E9FBB4 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,9 +236,10 @@
 			children = (
 				7025767D29D27C4600445354 /* EmergencyViewController.swift */,
 				703350452A2279DC00C30138 /* EmergencyViewModel.swift */,
-				7033503D2A220CF200C30138 /* EmergencyViewTVExpCell.swift */,
-				703350492A23792A00C30138 /* EmergencyViewTVMapCell.swift */,
 				703350432A224AD900C30138 /* EmergencyViewTVCModel.swift */,
+				7033503D2A220CF200C30138 /* EmergencyViewTVExpCell.swift */,
+				703350492A23792A00C30138 /* EmergencyViewTVCallCell.swift */,
+				7033504B2A2383CB00C30138 /* EmergencyViewTVMapCell.swift */,
 				703350412A22323900C30138 /* EmergencyViewTVPaddingCell.swift */,
 			);
 			path = Emergency;
@@ -451,11 +454,12 @@
 				7025767629D27B7E00445354 /* ExplanationViewController.swift in Sources */,
 				703350402A2218CF00C30138 /* Extension.swift in Sources */,
 				70DA65452A21A69400E9FBB4 /* CustomNavBar.swift in Sources */,
-				7033504A2A23792A00C30138 /* EmergencyViewTVMapCell.swift in Sources */,
+				7033504A2A23792A00C30138 /* EmergencyViewTVCallCell.swift in Sources */,
 				7025767B29D27BF300445354 /* PracticeViewController.swift in Sources */,
 				7025763529D277B200445354 /* AppDelegate.swift in Sources */,
 				703350462A2279DC00C30138 /* EmergencyViewModel.swift in Sources */,
 				7025763F29D277B200445354 /* SaveUs.xcdatamodeld in Sources */,
+				7033504C2A2383CB00C30138 /* EmergencyViewTVMapCell.swift in Sources */,
 				70DA65472A21DC2200E9FBB4 /* CustomViewController.swift in Sources */,
 				7025767E29D27C4600445354 /* EmergencyViewController.swift in Sources */,
 				7033503E2A220CF200C30138 /* EmergencyViewTVExpCell.swift in Sources */,

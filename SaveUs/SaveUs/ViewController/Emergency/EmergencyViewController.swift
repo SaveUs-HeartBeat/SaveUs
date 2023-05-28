@@ -17,13 +17,18 @@ class EmergencyViewController: CustomViewController {
     enum tableIndex: Int, CaseIterable {
         case topPaddingCell
         case expCell
+        case callCell
         case mapCell
+        case bottomPaddingCell
+
     }
     
     private let tableView: UITableView = .init().then {
         $0.register(cellType: EmergencyViewTVPaddingCell.self)
         $0.register(cellType: EmergencyViewTVExpCell.self)
+        $0.register(cellType: EmergencyViewTVCallCell.self)
         $0.register(cellType: EmergencyViewTVMapCell.self)
+
         $0.sectionHeaderTopPadding = 0.0
         $0.backgroundColor = .white
         $0.separatorStyle = .none
@@ -104,9 +109,16 @@ extension EmergencyViewController: UITableViewDataSource {
             cell.setData(data: self.viewModel.cellCurrentData)
             return cell
             
+        case .callCell :
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EmergencyViewTVCallCell.self)
+            return cell
+            
         case .mapCell :
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EmergencyViewTVMapCell.self)
 //            cell.setData(data: self.viewModel.cellCurrentData)
+            return cell
+        case .bottomPaddingCell:
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EmergencyViewTVPaddingCell.self)
             return cell
             
         case .none:
@@ -129,7 +141,7 @@ extension EmergencyViewController {
         tableView.snp.makeConstraints{
             $0.top.equalTo(navBar.snp.bottom)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(bottomView)
+            $0.bottom.equalTo(bottomView.snp.top)
         }
         
         bottomView.snp.makeConstraints{
