@@ -45,6 +45,7 @@
 		70FE93032A24036B00EE71A3 /* ex3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70FE92FF2A24036B00EE71A3 /* ex3.mp3 */; };
 		70FE93042A24036B00EE71A3 /* ex1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70FE93002A24036B00EE71A3 /* ex1.mp3 */; };
 		70FE93052A24036B00EE71A3 /* ex4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70FE93012A24036B00EE71A3 /* ex4.mp3 */; };
+		70FE93072A24095C00EE71A3 /* PracticeViewTVExpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE93062A24095C00EE71A3 /* PracticeViewTVExpCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		70FE92FF2A24036B00EE71A3 /* ex3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ex3.mp3; sourceTree = "<group>"; };
 		70FE93002A24036B00EE71A3 /* ex1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ex1.mp3; sourceTree = "<group>"; };
 		70FE93012A24036B00EE71A3 /* ex4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ex4.mp3; sourceTree = "<group>"; };
+		70FE93062A24095C00EE71A3 /* PracticeViewTVExpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeViewTVExpCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				7025767A29D27BF300445354 /* PracticeViewController.swift */,
+				70FE93062A24095C00EE71A3 /* PracticeViewTVExpCell.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				7025767B29D27BF300445354 /* PracticeViewController.swift in Sources */,
 				7025763529D277B200445354 /* AppDelegate.swift in Sources */,
 				703350462A2279DC00C30138 /* EmergencyViewModel.swift in Sources */,
+				70FE93072A24095C00EE71A3 /* PracticeViewTVExpCell.swift in Sources */,
 				7025763F29D277B200445354 /* SaveUs.xcdatamodeld in Sources */,
 				7033504C2A2383CB00C30138 /* EmergencyViewTVMapCell.swift in Sources */,
 				70DA65472A21DC2200E9FBB4 /* CustomViewController.swift in Sources */,

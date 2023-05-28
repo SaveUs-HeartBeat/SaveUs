@@ -78,6 +78,14 @@ class EmergencyViewController: CustomViewController {
         self.viewModel.setCellData()
         setView()
         setCloser()
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
+
     }
 
     
