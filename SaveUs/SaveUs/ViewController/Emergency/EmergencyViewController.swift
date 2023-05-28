@@ -20,6 +20,7 @@ class EmergencyViewController: CustomViewController {
     ///CPR소리재생가능 상태
     private var isBeepSoundPlay = false
     
+    
     enum tableIndex: Int, CaseIterable {
         case topPaddingCell
         case expCell
@@ -102,9 +103,13 @@ class EmergencyViewController: CustomViewController {
         if self.viewModel.setCellData() {
             nextButton.backgroundColor = UIColor(hex: "#B7B7B7")
             nextButton.isEnabled = false
+            tableView.reloadData()
             self.isBeepSoundPlay = true
         }
-        tableView.reloadData()
+        if self.isBeepSoundPlay == false {
+            tableView.reloadData()
+        }
+        
     }
     
     private func setCloser() {
@@ -149,10 +154,10 @@ extension EmergencyViewController: UITableViewDataSource {
         case .expCell:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EmergencyViewTVExpCell.self)
             cell.setData(data: self.viewModel.cellCurrentData)
-            cell.voicEnd = {
-//                self.startNext()
+            cell.voicEnd = { [weak self] in
                 print("ppap : 보이스 끝남")
-//                self.setNext()
+                self?.startNext()
+//                self!.setNext()
             }
             return cell
             

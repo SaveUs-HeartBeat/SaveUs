@@ -83,7 +83,7 @@ class EmergencyViewTVExpCell: UITableViewCell, Reusable {
     
     //데이터셋팅
     func setData(data: EmergencyViewTVCModel) {
-        stopTimer()
+        stopTimerSetDataEnd()
         TTSManager.shared.stop()
         TTSManager.shared.play(data.voiceString+data.voiceString)
         titleLabel.text = data.title
@@ -108,12 +108,17 @@ class EmergencyViewTVExpCell: UITableViewCell, Reusable {
             remainingTime -= 1
             titleTimerLabel.text = "\(remainingTime)"
         } else {
-            stopTimer() // 타이머 종료
+            stopTimerEndTimeEnd() // 타이머 종료
         }
     }
     
     // 타이머 종료 메서드
-    private func stopTimer() {
+    private func stopTimerSetDataEnd() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    private func stopTimerEndTimeEnd() {
         timer?.invalidate()
         timer = nil
         self.voicEnd?()
