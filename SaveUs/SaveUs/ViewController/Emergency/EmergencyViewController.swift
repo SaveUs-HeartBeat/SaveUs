@@ -87,6 +87,18 @@ class EmergencyViewController: CustomViewController {
     
     @objc
     private func nextButtonTapped() {
+        setNext()
+    }
+    
+    private func startNext(){
+        setNext()
+        if self.isBeepSoundPlay {
+            self.playSound()
+            return
+        }
+    }
+
+    private func setNext() {
         if self.viewModel.setCellData() {
             nextButton.backgroundColor = UIColor(hex: "#B7B7B7")
             nextButton.isEnabled = false
@@ -94,7 +106,6 @@ class EmergencyViewController: CustomViewController {
         }
         tableView.reloadData()
     }
-
     
     private func setCloser() {
         self.navBar.didTpaBackButton = {
@@ -104,12 +115,15 @@ class EmergencyViewController: CustomViewController {
             self.isBeepSoundPlay = false
         }
         ///tts 재생끝 
-        TTSManager.shared.completion = {
-            print("ppap::ㅇ")
-            if self.isBeepSoundPlay {
-                self.playSound()
-            }
-        }
+//        TTSManager.shared.completion = {
+//            print("ppap::ㅇ")
+//            if self.isBeepSoundPlay {
+//                self.playSound()
+//                return
+//            }
+////            self.setNext()
+//
+//        }
         
         
     }
@@ -135,7 +149,11 @@ extension EmergencyViewController: UITableViewDataSource {
         case .expCell:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EmergencyViewTVExpCell.self)
             cell.setData(data: self.viewModel.cellCurrentData)
-
+            cell.voicEnd = {
+//                self.startNext()
+                print("ppap : 보이스 끝남")
+//                self.setNext()
+            }
             return cell
             
         case .callCell :

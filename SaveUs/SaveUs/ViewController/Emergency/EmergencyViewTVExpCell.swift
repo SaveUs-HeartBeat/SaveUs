@@ -11,6 +11,11 @@ import Then
 
 class EmergencyViewTVExpCell: UITableViewCell, Reusable {
 
+    // 타이머 프로퍼티 추가
+    private var timer: Timer?
+    private var remainingTime: Int = 0
+    var voicEnd: (() -> ())?
+
     //중복되는거 떄문에 지정
     private let borderW: CGFloat = 3
     
@@ -77,12 +82,41 @@ class EmergencyViewTVExpCell: UITableViewCell, Reusable {
     }
     
     //데이터셋팅
-    func setData(data:EmergencyViewTVCModel){
+    func setData(data: EmergencyViewTVCModel) {
+        stopTimer()
         TTSManager.shared.stop()
-        TTSManager.shared.play(data.voiceString)
+        TTSManager.shared.play(data.voiceString+data.voiceString)
         titleLabel.text = data.title
         des1Label.text = data.des1
         des2Label.text = data.des2
+        
+        // 타이머의 시간 설정
+        remainingTime = data.timer 
+        titleTimerLabel.text = "\(remainingTime)"
+        
+        startTimer() // 타이머 시작
+    }
+    
+    // 타이머 시작 메서드
+    private func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    // 타이머 갱신 메서드
+    @objc private func updateTimer() {
+        if remainingTime > 0 {
+            remainingTime -= 1
+            titleTimerLabel.text = "\(remainingTime)"
+        } else {
+            stopTimer() // 타이머 종료
+        }
+    }
+    
+    // 타이머 종료 메서드
+    private func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+        self.voicEnd?()
     }
     
 }
