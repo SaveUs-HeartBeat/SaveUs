@@ -23,8 +23,9 @@ class EmergencyViewController: CustomViewController {
     private let tableView: UITableView = .init().then {
         $0.register(cellType: EmergencyViewTVPaddingCell.self)
         $0.register(cellType: EmergencyViewTVExpCell.self)
+        $0.register(cellType: EmergencyViewTVMapCell.self)
         $0.sectionHeaderTopPadding = 0.0
-        $0.backgroundColor = .white//.yellow.withAlphaComponent(0.3)//.GrayScale.Gray05.color
+        $0.backgroundColor = .white
         $0.separatorStyle = .none
         $0.sectionFooterHeight = 0
         $0.contentInsetAdjustmentBehavior = .never
@@ -104,7 +105,9 @@ extension EmergencyViewController: UITableViewDataSource {
             return cell
             
         case .mapCell :
-            return .init()
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EmergencyViewTVMapCell.self)
+//            cell.setData(data: self.viewModel.cellCurrentData)
+            return cell
             
         case .none:
             return .init()
