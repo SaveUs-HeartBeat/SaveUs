@@ -84,7 +84,7 @@ class EmergencyViewController: CustomViewController {
     @objc
     private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
-        TTSManager.shared.stop()
+//        TTSManager.shared.stop()
         self.stopSound()
         isBeepSoundPlay = false
         //이때는 재생 ㄴㄴ
@@ -104,6 +104,7 @@ class EmergencyViewController: CustomViewController {
     }
 
     private func setNext() {
+        stopSound()
         if self.viewModel.setCellData() {
             nextButton.backgroundColor = UIColor(hex: "#B7B7B7")
             nextButton.isEnabled = false
@@ -120,7 +121,7 @@ class EmergencyViewController: CustomViewController {
 
         self.navBar.didTpaBackButton = {
             self.navigationController?.popViewController(animated: true)
-            TTSManager.shared.stop()
+//            TTSManager.shared.stop()
             self.stopSound()
             self.isBeepSoundPlay = false
         }
@@ -141,7 +142,7 @@ extension EmergencyViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        volumeView.setVolume(1)
+//        volumeView.setVolume(1)
         let currentIndex = tableIndex(rawValue: indexPath.section)
         switch currentIndex {
         case .topPaddingCell:
@@ -150,6 +151,8 @@ extension EmergencyViewController: UITableViewDataSource {
         case .expCell:
             let cell = tableView.dequeueReusableCell(for: indexPath, cellType: EmergencyViewTVExpCell.self)
             cell.setData(data: self.viewModel.cellCurrentData)
+            playEXSound(self.viewModel.cellCurrentData.voiceFile)
+            
             cell.voicEnd = { [weak self] in
                 print("ppap : 보이스 끝남")
                 self?.startNext()
@@ -188,6 +191,22 @@ extension EmergencyViewController {
         do {
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             player?.numberOfLoops = -1
+            player?.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func playEXSound(_ name:String) {
+//        let soundName = "beep1"
+        // forResource: 파일 이름(확장자 제외) , withExtension: 확장자(mp3, wav 등) 입력
+        guard let url = Bundle.main.url(forResource: name, withExtension: "mp3") else {
+            return
+        }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            player?.numberOfLoops = 1
             player?.play()
         } catch let error {
             print(error.localizedDescription)
