@@ -80,7 +80,7 @@ class EmergencyViewController: CustomViewController {
     private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
         TTSManager.shared.stop()
-        stopSound()
+        self.stopSound()
         isBeepSoundPlay = false
         //이때는 재생 ㄴㄴ
     }
@@ -90,6 +90,7 @@ class EmergencyViewController: CustomViewController {
         if self.viewModel.setCellData() {
             nextButton.backgroundColor = UIColor(hex: "#B7B7B7")
             nextButton.isEnabled = false
+            self.isBeepSoundPlay = true
         }
         tableView.reloadData()
     }
@@ -159,7 +160,7 @@ extension EmergencyViewController: UITableViewDataSource {
 extension EmergencyViewController {
     
     func playSound() {
-        let soundName = "test"
+        let soundName = "beep1"
         // forResource: 파일 이름(확장자 제외) , withExtension: 확장자(mp3, wav 등) 입력
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
             return
